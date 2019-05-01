@@ -3,7 +3,7 @@ var i = 0;
 function change() {
   var doc = document.getElementById("wrapper").getElementsByClassName("withbg")[0];
   var images = ["url('https://tq.kz/wp-content/uploads/2019/04/kolsaypromo2.jpg')", "url('https://tq.kz/wp-content/uploads/2019/04/manpartyweb2.jpg')"];
-  doc.style.backgroundImage = color[i];
+  doc.style.backgroundImage = images[i];
   i = (i + 1) % images.length;
 }
 setInterval(change, 5000);
