@@ -1,0 +1,10 @@
+Created a custom payment form on Wp site modifying existing Contact Form 7 that collects all necessary payment data and sends 
+to corporate email before leading to external non-modifyable payment form for an actual online payment. Js code I used below:
+
+<script async>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    if ( event.detail.contactFormId != '5' ) {
+        window.open('https://(payment_form_url)', '_blank');
+    }
+}, false );
+</script>
