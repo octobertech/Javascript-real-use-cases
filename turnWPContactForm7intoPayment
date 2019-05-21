@@ -4,7 +4,7 @@ to corporate email before leading to external non-modifyable payment form for an
 <script async>
 document.addEventListener( 'wpcf7mailsent', function( event ) {
     if ( event.detail.contactFormId != '5' ) {
-        window.open('https://(payment_form_url)', '_blank');
+        document.location.assign('https://(payment_form_url)');
     }
 }, false );
 </script>
