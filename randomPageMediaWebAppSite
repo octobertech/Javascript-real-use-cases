@@ -1,0 +1,26 @@
+Came up with and built from scratch https://hikes.kz (for a travel company) - free mountain hikes web app 
+that randomly shows/offers people various hikes on entire page (with photo background) 
+when they push the button "I want to go to mountains!". They also can sign up for offered hike via Google forms.
+
+Js code:
+<script>
+        var sections = document.querySelectorAll("section");
+        var randomNum = 0;
+        var currentSecId = "";
+        function changeSection() {
+            var previousNum = randomNum;
+            while (randomNum === previousNum) {
+                randomNum = Math.floor(Math.random() * sections.length);
+            }
+            for (var i = 0; i < sections.length; i++ ) {
+                sections[i].style.display = "none";
+            };
+            sections[randomNum].style.display = "block";
+            currentSecId = sections[randomNum].id;
+            body.style.backgroundImage = "url('images/" + currentSecId + ".jpg')"
+            body.style.backgroundRepeat = "no-repeat"; 
+            body.backgroundSize = "cover";
+            body.style.backgroundPosition = "center";
+            body.style.backgroundAttachment = "fixed";
+        };
+    </script>
